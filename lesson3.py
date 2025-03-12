@@ -53,6 +53,7 @@ def get_response_str_output_parser():
     # invoke the chain
     response = chain.invoke({'subject':"AI"})
     return response
+
 print(get_response_str_output_parser())
 
 #====== with list output parser =======

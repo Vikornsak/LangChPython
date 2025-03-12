@@ -49,11 +49,11 @@ prompt = ChatPromptTemplate.from_template("""
 
 chain = prompt | llm
 response = chain.invoke({
-    'input':"What is Mahidol",
+    'input':"What is Mahidol?, change name when ?  sinc when current year is 2025, and translate to thai language. any list person name of related to json",
     'context': [docA, docB]
 })
 print(response.content)
-
+# ***Can make any question to input***
 
 # chain = create_stuff_documents_chain(
 #     llm =llm,
