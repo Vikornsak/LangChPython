@@ -11,10 +11,14 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_community.document_loaders import WebBaseLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
+from langchain_together import TogetherEmbeddings
 from langchain_community.vectorstores.faiss import FAISS
 from langchain.chains import create_retrieval_chain
 
 
+embedding = TogetherEmbeddings(
+    model="togethercomputer/m2-bert-80M-8k-retrieval",
+)
 
 
 def  get_document_from_web(url):
@@ -31,7 +35,7 @@ def  get_document_from_web(url):
     return splitDocs
 
 def create_db(docs):
-    embedding = OpenAIEmbeddings()
+    # embedding = OpenAIEmbeddings()
     vectorStore = FAISS.from_documents(docs, embedding = embedding) 
     return vectorStore
 

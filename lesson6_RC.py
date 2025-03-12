@@ -35,7 +35,7 @@ def  get_document_from_web(url):
         chunk_overlap=20,
     )
     splitDocs = splitter.split_documents(docs)
-    # print(len(splitDocs))
+    print(len(splitDocs))
 
     return splitDocs
 
